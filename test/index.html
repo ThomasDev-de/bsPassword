@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="../vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/twbs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        /*@font-face {*/
+        /*    font-family: 'bootstrap-icons';*/
+        /*    src: url('/vendor/twbs/bootstrap-icons/font/fonts/bootstrap-icons.woff2') format('woff2');*/
+        /*    src: url('/vendor/twbs/bootstrap-icons/font/fonts/bootstrap-icons.woff') format('woff');*/
+        /*}*/
+    </style>
+</head>
+<body>
+<div class="container py-5">
+    <h1>Hello, world!</h1>
+    <h4>normal input </h4>
+    <form autocomplete="off">
+        <label for="password"></label><input type="password" class="form-control" id="password" placeholder="Password" autocomplete="new-password">
+
+        <hr class="my-5">
+        <h4>normal input with repeat input</h4>
+        <label for="password2"></label><input type="password" class="form-control" id="password2" placeholder="Password" autocomplete="new-password">
+        <label for="passwordRepeat"></label><input type="password" class="form-control" id="passwordRepeat" autocomplete="new-password"
+                                                   placeholder="Password">
+        <hr class="my-5">
+        <h4>floating input </h4>
+        <div class="w-50">
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" autocomplete="new-password">
+                <label for="floatingPassword">Password</label>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="../vendor/components/jquery/jquery.min.js"></script>
+<script src="../vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../dist/bsPassword.min.js"></script>
+<script>
+    $(function () {
+        $('#password').bsPassword();
+        $('#password2').bsPassword({
+            showProgress: true,
+            connectedPasswordRepeat: '#passwordRepeat'
+        });
+        $('#floatingPassword').bsPassword({
+            showPassword: true,
+        });
+
+    });
+</script>
+</body>
+</html>
